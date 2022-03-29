@@ -1,0 +1,35 @@
+package br.com.luiz.conta.entities;
+
+public class ContaEspecial extends ContaBancaria{
+	
+	private double limiteEspecial;
+
+	public ContaEspecial() {
+		super();
+	}
+
+	public ContaEspecial(String nomeCliente, String numConta, double saldo, double limite) {
+		super(nomeCliente, numConta, saldo);
+		this.limiteEspecial = limite;
+	}
+
+	public double getLimite() {
+		return limiteEspecial;
+	}
+
+	public void setLimite(double limite) {
+		this.limiteEspecial = limite;
+	}
+
+	@Override
+	public double sacar(int num) {
+		
+		double limite = limiteEspecial + getSaldo();
+		if (num > limite) {
+			System.out.println("Valor superior ao saldo em conta!");
+		}
+		return getSaldo() - (getSaldo() - num);
+	}	
+	
+	
+}

@@ -1,0 +1,36 @@
+package br.com.luiz.conta.entities;
+
+public class ContaEspecial extends ContaBancaria{
+	
+	private double limiteEspecial;
+
+	public ContaEspecial() {
+		super();
+	}
+
+	public ContaEspecial(String nomeCliente, String numConta, double saldo, double limite) {
+		super(nomeCliente, numConta, saldo);
+		this.limiteEspecial = limite;
+	}
+
+	public double getLimite() {
+		return limiteEspecial;
+	}
+
+	public void setLimite(double limite) {
+		this.limiteEspecial = limite;
+	}
+
+	@Override
+	public boolean sacar(double valor) {
+		
+		double limite = limiteEspecial + getSaldo();
+		if (valor > limite) {
+			return false;
+		}
+		saldo -= valor;
+		return true;
+	}	
+	
+	
+}

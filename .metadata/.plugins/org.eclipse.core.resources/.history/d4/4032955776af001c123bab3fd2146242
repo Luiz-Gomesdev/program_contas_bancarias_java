@@ -1,0 +1,36 @@
+package br.com.luiz.conta.entities;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class ContaPoupanca extends ContaBancaria{
+	
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
+	private Date diaRendimento;
+
+	public ContaPoupanca() {
+		super();
+	}
+
+	public ContaPoupanca(String nomeCliente, String numConta, double saldo, SimpleDateFormat sdf, Date diaRendimento) {
+		super(nomeCliente, numConta, saldo);
+		this.sdf = sdf;
+		this.diaRendimento = diaRendimento;
+	}
+
+	public Date getDiaRendimento() {
+		return diaRendimento;
+	}
+
+	public void setDiaRendimento(Date diaRendimento) {
+		this.diaRendimento = diaRendimento;
+	}
+	
+//	public double calcularNovoSaldo(double rend) {
+//		if (Date == diaRendimento) {
+//			return this.saldo += (saldo * rend);
+//		}
+//	}
+
+}

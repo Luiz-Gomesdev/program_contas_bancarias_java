@@ -1,0 +1,39 @@
+package br.com.luiz.conta.entities;
+
+import java.util.Date;
+
+public class ContaPoupanca extends ContaBancaria{
+	
+	private int diaRendimento;
+
+	public ContaPoupanca() {
+		super();
+	}
+
+	public ContaPoupanca(String nomeCliente, String numConta, double saldo, int diaRendimento) {
+		super(nomeCliente, numConta, saldo);
+		this.diaRendimento = diaRendimento;
+	}
+
+	public int getDiaRendimento() {
+		return diaRendimento;
+	}
+
+	public void setDiaRendimento(int diaRendimento) {
+		this.diaRendimento = diaRendimento;
+	}
+
+	@Override
+	public String toString() {
+		return "ContaPoupanca [diaRendimento= " + diaRendimento + "]";
+	}
+	
+	
+	
+//	public double calcularNovoSaldo(double rend) {
+//		if (Date == diaRendimento) {
+//			return this.saldo += (saldo * rend);
+//		}
+//	}
+
+}

@@ -1,0 +1,27 @@
+package br.com.luiz.conta.application;
+
+import java.util.Locale;
+
+import br.com.luiz.conta.entities.ContaBancaria;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+//		Locale.setDefault(Locale.US);
+		
+		ContaBancaria ct = new ContaBancaria();
+		
+		System.out.println("=== Conta Simples ===");
+		
+		ct.setNomeCliente("Rogério Vieira");
+		ct.setNumConta("07666-8");
+		ct.setSaldo(400);
+		
+		ct.depositar(100);
+		
+		System.out.println(ct);
+		
+	}
+
+}
